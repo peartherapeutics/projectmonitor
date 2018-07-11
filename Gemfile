@@ -34,7 +34,7 @@ gem 'whenever', require: false
 gem 'rails-backbone'
 gem 'coffee-rails'
 gem 'eco'
-gem 'mysql2'
+gem 'pg', '~> 0.11'
 gem 'eventmachine'
 gem 'em-http-request'
 gem 'newrelic_rpm'

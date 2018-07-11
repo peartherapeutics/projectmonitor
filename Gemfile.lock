@@ -236,7 +236,6 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
-    mysql2 (0.4.4)
     nenv (0.3.0)
     netrc (0.11.0)
     newrelic_rpm (3.16.0.318)
@@ -264,6 +263,7 @@ GEM
       oauth2 (~> 1.1)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    pg (0.21.0)
     phantomjs (2.1.1.0)
     pivotal-tracker (0.5.13)
       builder
@@ -448,13 +448,13 @@ DEPENDENCIES
   launchy
   lograge (~> 0.4)
   loofah (= 2.2.2)
-  mysql2
   newrelic_rpm
   nokogiri (= 1.8.2)
   oauth2 (= 1.4.0)
   omniauth (~> 1.8.1)
   omniauth-google-oauth2 (= 0.5.3)
   omniauth-oauth2 (= 1.5.0)
+  pg (~> 0.11)
   pivotal-tracker
   pry
   pry-nav
@@ -485,4 +485,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
