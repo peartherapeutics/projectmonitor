@@ -1,6 +1,4 @@
 class ConfigurationController < ApplicationController
-  before_filter :authenticate_user!
-
   respond_to :text, only: :show
 
   def show
