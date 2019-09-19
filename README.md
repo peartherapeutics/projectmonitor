@@ -1,3 +1,10 @@
+Usage
+
+bundle exec rails s &
+bundle exec rake projectmonitor:poller &
+http://localhost:3000/configuration/edit
+
+===========
 Description [![Build Status](https://secure.travis-ci.org/pivotal-legacy/projectmonitor.png?branch=master)](http://travis-ci.org/pivotal-legacy/projectmonitor) [![Code Climate](https://codeclimate.com/github/pivotal/projectmonitor.png)](https://codeclimate.com/github/pivotal/projectmonitor)
 ===========
 
@@ -52,7 +59,7 @@ To get the code, execute the following:
 
     git clone git://github.com/pivotal/projectmonitor.git
     cd projectmonitor
-    
+
 ### Get Docker
 ProjectMonitor provides a one-line setup using Docker
 
@@ -65,7 +72,7 @@ Download and install docker from [the official Docker website](https://docs.dock
 
 The app will be available at: [http://0.0.0.0:3000](http://0.0.0.0:3000)
 
-Add a user: 
+Add a user:
 
 	docker exec CONTAINER_ID_OR_NAME \
 	bash -c 'cd projectmonitor && \
@@ -78,13 +85,13 @@ To stop: `docker kill <container-id>`
 	docker run -it -p 3000:3000 -v `pwd`:/projectmonitor pivotaliad/project-monitor
 
 Inside the container run:
-	
+
 	bundle install
 
 To run tests:
-   
+
 	rake local:test
-	
+
 see [Custom Configuration](#custom-configuration) for DB setup
 
 ## Custom configuration
@@ -119,7 +126,7 @@ behind a load balancer (e.g. on a hosted provider such as Heroku), you'll probab
 Project monitor uses [Devise](https://github.com/plataformatec/devise) to provide both database backed authentication and
 Google OAuth2 logins.
 
-Regular password authentication for managing project settings is enabled by default. 
+Regular password authentication for managing project settings is enabled by default.
 Run `rake db:seed` with the environment variables `PROJECT_MONITOR_LOGIN`, `PROJECT_MONITOR_EMAIL` and
 `PROJECT_MONITOR_PASSWORD` set to create a new account.
 
@@ -236,7 +243,7 @@ The default way to deploy to CF is using the attached [concourse](https://concou
 
 create a credentials yml at `concourse/projectmonitor-production-credentials.yml`
 
-populate it with 
+populate it with
 
 	api-endpoint: <replace with CF api endpoint ex: api.run.cfapps.io>
 	cf-username: <replace with CF username>
@@ -244,18 +251,18 @@ populate it with
 	cf-org: <replace with CF organization name>
 	cf-space: <replace with CF space name>
 
-Set the pipilene: 
+Set the pipilene:
 
 	fly set-pipeline -c concourse/projectmonitor-production-pipeline.yml -p PIPELINE_NAME \
 	-l concourse/projectmonitor-production-credentials.yml -t TARGET_NAME
-	
+
 The pipeline will deploy the latest stable version with default configuration every time it is updated.
 
 Add a user once deployed:
 
 	cf ssh project-monitor-web -t -c "/tmp/lifecycle/launcher /home/vcap/app 'rails c' ''"
 	User.create!(login: 'jane', name: 'Jane Martinez', email: 'jmartinez@example.com', password: 'password')
-	
+
 For manual CF deployment:
 
 ```
@@ -287,4 +294,3 @@ Copyright (c) 2018 Pivotal Labs. This software is licensed under the MIT License
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pivotal/projectmonitor/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
