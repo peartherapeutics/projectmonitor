@@ -43,7 +43,7 @@ gem 'uglifier'
 gem 'clockwork', '>= 2.0.0'
 gem 'jbuilder', '>= 2.6.4'
 gem 'ruby-openid'
-gem 'kramdown'
+gem 'kramdown', '>= 2.3.0'
 gem 'lograge', '~> 0.11', '>= 0.11.2'
 
 group :production do
