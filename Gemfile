@@ -27,7 +27,7 @@ gem 'omniauth-oauth2', '1.5.0'
 
 gem 'rack-protection', '1.5.5'
 gem 'pivotal-tracker', '>= 0.5.13'
-gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'rails-dom-testing', '~> 2.0.0'
 gem 'rake'
 gem 'whenever', require: false
